@@ -23,7 +23,7 @@ API endpoints:
 
 ## 3. localhost/api/subscription/
 
-#### Takes in a POST request 
+#### Takes in a POST request:
 #### {'email': 'youremail@example.com'}
 
 
