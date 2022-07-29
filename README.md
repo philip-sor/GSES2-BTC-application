@@ -25,6 +25,7 @@ API endpoints:
 
 #### Takes in a POST request:
 #### {'email': 'youremail@example.com'}
+##### Have in mind that the application does NOT check if the email you send is valid, so please, use valid emails.
 
 
 ## 4. localhost/api/sendEmail/
