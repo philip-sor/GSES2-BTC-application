@@ -46,24 +46,25 @@ def add_email(request):
 def send_emails(request):
     api_btc_url = 'https://api.coingecko.com/api/v3/coins/bitcoin?localization=en'
     current_btc_price = requests.request('GET', api_btc_url).json()
-    # with open('emails.txt', 'r') as emails:
-    #     emails.seek(0)
-    #     for e in emails.readlines():
-    with open('emails.txt', 'r') as emails:
-        for e in emails.read().split(" "):
-            email = e.rstrip()
-            # print(email)
-            message = Mail(
-                from_email='YOUR EMAIL',
-                to_emails=f'{email}',
-                subject='BTC to UAH price',
-                html_content=f"<strong>{current_btc_price['market_data']['current_price']['uah']}</strong>")
-            sg = SendGridAPIClient("YOUR SENDGRID API KEY")
-            response = sg.send(message)
-            print(email)
-            print(response.status_code)
-            print(response.body)
-            print(response.headers)
-            return JsonResponse({"response": "200",
-                                 "description": "Emails were sent"})
+	if request.method == "POST":
+		# with open('emails.txt', 'r') as emails:
+		#     emails.seek(0)
+		#     for e in emails.readlines():
+		with open('emails.txt', 'r') as emails:
+			for e in emails.read().split(" "):
+				email = e.rstrip()
+				# print(email)
+				message = Mail(
+					from_email='YOUR EMAIL',
+					to_emails=f'{email}',
+					subject='BTC to UAH price',
+					html_content=f"<strong>{current_btc_price['market_data']['current_price']['uah']}</strong>")
+				sg = SendGridAPIClient("YOUR SENDGRID API KEY")
+				response = sg.send(message)
+				print(email)
+				print(response.status_code)
+				print(response.body)
+				print(response.headers)
+				return JsonResponse({"response": "200",
+									 "description": "Emails were sent"})
 
