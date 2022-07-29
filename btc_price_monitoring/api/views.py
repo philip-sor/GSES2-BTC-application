@@ -10,7 +10,8 @@ from django.views.decorators.csrf import csrf_exempt
 def show_paths(request):
     return JsonResponse({'tags': {
         'rate': 'Get the current rate of BTC to UAH',
-        'subscription': 'subscribe to newsletter'
+        'subscription': 'subscribe to newsletter',
+	'sendEmails': 'send emails to all subscribed users'
     }
     })
 
