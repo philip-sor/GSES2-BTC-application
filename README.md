@@ -15,6 +15,8 @@
 API endpoints: 
 ## 1. localhost/api
 
+#### Shows available api endpoints  
+
 
 ## 2. localhost/api/rate/
 
