@@ -5,10 +5,10 @@
 ## To send emails you need TO register an account on https://sendgrid.com/ 
 
 
-## then create and paste your API KEY on btc_price_monitoring/api/views.py, line 62: sg = SendGridAPIClient("YOUR SENDGRID API KEY") 
+## then create and paste your API KEY on btc_price_monitoring/api/views.py, line 51: sg = sendgrid.SendGridAPIClient(api_key="YOUR API KEY")
 
 
-## After that add your email on line 58: from_email='YOUR EMAIL',
+## After that add your email on line 52: from_email = Email("YOUR EMAIL"),
 
 
 
